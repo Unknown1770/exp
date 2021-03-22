@@ -80,7 +80,7 @@ def profile_example():
            'user_name' : user_name,
            'addressal_name' : addressal_name,
            'dob_year': dob_year,
-           'dob_month' : dob_month
+           'dob_month' : dob_month,
            'nationality': nationality
          }
         
