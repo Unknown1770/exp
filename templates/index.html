@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ title }}</h2>
+
+<form method='POST' action='/sum4'>
+<table>
+<p>Use this form to submit a search request:</p>
+<tr><td>NUM1</td><td><input name='num1' type='number' step="any" width='60'></td></tr>
+<tr><td>NUM2</td><td><input name='num2' type='number' step = "any" width="70"></td></tr>
+</table>
+<p>When you're ready, click this button:</p>
+<p><input value='Do it!' type='SUBMIT'></p>
+</form>
+
+{% endblock %}
