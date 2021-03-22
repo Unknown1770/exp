@@ -30,7 +30,7 @@ def profile_example():
             email = request_data['email']
 
         if 'dob' in request_data:
-            dob = request_data['email']
+            dob = request_data['dob']
             dob_year = dob[0:4]
             dob_month = dob[5:7]
             
