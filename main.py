@@ -1,6 +1,6 @@
 from flask import Flask,request
-from firebase_admin import credentials
-from firebase_admin import firestore
+#from firebase_admin import credentials
+#from firebase_admin import firestore
 
 
 '''
