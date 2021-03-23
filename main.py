@@ -1,3 +1,4 @@
+import flask
 from flask import Flask,request
 import firebase_admin
 import requests
@@ -27,6 +28,14 @@ firebase_admin.initialize_app(cred, {
 
 db = firestore.client()
 '''
+cred = credentials.Certificate('testing-bf5a4-firebase-adminsdk-k3wvf-9481825d20.json')
+
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://testing-bf5a4.firebaseio.com/'
+})
+
+db = firestore.client()
+
 
 
 app = Flask(__name__)
@@ -79,7 +88,7 @@ def profile_example():
             name = request_data['name']
          
         
-        '''    
+         
         docref = db.collection('Profile').document()
         data1 = {
            'city': city,
@@ -97,9 +106,10 @@ def profile_example():
         
         docref.set(data1)  
         ldoc_id = docref.id
-        '''
+        
         
     return '''
+           Document_Id: {}
            Name: {}
            User_name: {}
            Addressal_name: {}
@@ -109,7 +119,7 @@ def profile_example():
            Date_of_birth: {}
            Birth_month: {}
            Birth_year: {}
-           Gender: {}'''.format(user_name, addressal_name, name, city, email, mobile, dob, dob_month, dob_year, gender)
+           Gender: {}'''.format(ldoc_id, user_name, addressal_name, name, city, email, mobile, dob, dob_month, dob_year, gender)
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
