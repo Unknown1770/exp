@@ -38,6 +38,8 @@ def profile_example():
     city = None
     email = None
     name = None
+    user_name = None
+    addressal_name = None
     mobile = None
     gender = None
     dob = None
@@ -93,13 +95,15 @@ def profile_example():
         
     return '''
            Name: {}
+           User_name: {}
+           Addressal_name: {}
            City: {}
            Email: {}
            Mobile: {}
            Date_of_birth: {}
            Birth_month: {}
            Birth_year: {}
-           Gender: {}'''.format(name, city, email, mobile, dob, dob_month, dob_year, gender)
+           Gender: {}'''.format(user_name, addressal_name, name, city, email, mobile, dob, dob_month, dob_year, gender)
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
