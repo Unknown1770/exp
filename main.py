@@ -1,3 +1,6 @@
+from flask import Flask,request
+
+'''
 from datetime import time
 
 import firebase_admin
@@ -9,7 +12,7 @@ from flask import request, jsonify, Flask, render_template
 
 # initialize firebase application
 #firebase_admin.initialize_app()
-'''
+
 cred = credentials.Certificate('testing-bf5a4-firebase-adminsdk-k3wvf-9481825d20.json')
 
 firebase_admin.initialize_app(cred, {
