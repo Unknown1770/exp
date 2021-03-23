@@ -69,9 +69,7 @@ def profile_example():
             
         if 'name' in request_data:
             name = request_data['name']
-            
-        user_name = name
-        addressal_name = name
+         
         
         '''    
         docref = db.collection('Profile').document()
@@ -94,8 +92,6 @@ def profile_example():
         '''
         
     return '''
-           User_Name: {}
-           Adressal_Name: {}
            Name: {}
            City: {}
            Email: {}
@@ -103,7 +99,7 @@ def profile_example():
            Date_of_birth: {}
            Birth_month: {}
            Birth_year: {}
-           Gender: {}'''.format(username,addressal_name,name, city, email, mobile, dob, dob_month, dob_year, gender)
+           Gender: {}'''.format(name, city, email, mobile, dob, dob_month, dob_year, gender)
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
