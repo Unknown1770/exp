@@ -84,7 +84,7 @@ def profile_example():
             Birth_year: {}
             Gender: {}'''.format(name, user_name, addressal_name, city, email, mobile, dob, dob_month, dob_year, gender)
 
-    return data
+    return json.dumps(data)
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
