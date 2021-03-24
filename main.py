@@ -71,7 +71,10 @@ def profile_example():
 
         if 'name' in request_data:
             name = request_data['name']
-
+    
+    
+    value = { 'Name':name, 'User_name':user_name, 'Addressal_name' : addressal_name, 'City' : city, 'Email' : email, 'Mobile' : mobile, 'Date_of_birth' : dob,
+             'Birth_month' : dob_month,'Birth_year' : dob_year,'Gender' : gender}
     data = '''
             Name: {}
             User_name: {}
@@ -84,7 +87,7 @@ def profile_example():
             Birth_year: {}
             Gender: {}'''.format(name, user_name, addressal_name, city, email, mobile, dob, dob_month, dob_year, gender)
 
-    return json.dumps(data)
+    return json.dumps(value)
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
