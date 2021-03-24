@@ -1,8 +1,4 @@
-import flask
-from flask import Flask,request, jsonify
-
-
-
+from flask import Flask, request
 
 '''
 from datetime import time
@@ -26,10 +22,9 @@ firebase_admin.initialize_app(cred, {
 db = firestore.client()
 '''
 
-
-
-
 app = Flask(__name__)
+
+
 # GET requests will be blocked
 # GET requests will be blocked
 @app.route('/')
@@ -64,52 +59,32 @@ def profile_example():
             dob = request_data['dob']
             dob_year = dob[0:4]
             dob_month = dob[5:7]
-            
 
         if 'mobile' in request_data:
             mobile = request_data['mobile']
 
         if 'gender' in request_data:
             gender = request_data['gender']
-        
+
         if 'nationality' in request_data:
             nationality = request_data['nationality']
-            
+
         if 'name' in request_data:
             name = request_data['name']
-         
-        
-        ''' 
-        docref = db.collection('Profile').document()
-        data1 = {
-           'city': city,
-           'email': email,
-           'name': name,
-           'mobile': mobile,
-           'gender': gender,
-           'dob': dob,
-           'user_name' : user_name,
-           'addressal_name' : addressal_name,
-           'dob_year': dob_year,
-           'dob_month' : dob_month,
-           'nationality': nationality
-         }
-        
-        docref.set(data1)  
-        ldoc_id = docref.id
-        '''
-        
-    return '''
-           Name: {}
-           User_name: {}
-           Addressal_name: {}
-           City: {}
-           Email: {}
-           Mobile: {}
-           Date_of_birth: {}
-           Birth_month: {}
-           Birth_year: {}
-           Gender: {}'''.format(, user_name, addressal_name, name, city, email, mobile, dob, dob_month, dob_year, gender)
+
+    data = '''
+            Name: {}
+            User_name: {}
+            Addressal_name: {}
+            City: {}
+            Email: {}
+            Mobile: {}
+            Date_of_birth: {}
+            Birth_month: {}
+            Birth_year: {}
+            Gender: {}'''.format(name, user_name, addressal_name, city, email, mobile, dob, dob_month, dob_year, gender)
+
+    return jsonify(data)
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
